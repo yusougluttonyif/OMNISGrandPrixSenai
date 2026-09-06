@@ -10,7 +10,6 @@
             scrollbar-width: none;
             background-color: transparent;
             height: 100vh;
-            width: 100%;
             justify-content: center;
             align-items: center;
             transition: all 0.5s ease;
@@ -156,8 +155,9 @@
         h1 span:nth-child(2) {
             animation: spin 1s linear infinite reverse;
         }
-             section {
-            padding: 30px 20px;
+         section {
+            display: flow-root;
+            padding: 30px;
             background-image: linear-gradient(180deg, black, red);
             background-size: 100% 500%;
             border: 5px solid red;
