@@ -130,12 +130,36 @@
            user-select: none;
            -webkit-user-select: none;
         }   
+        h1 {
+            display:flow-root;
+            justify-self: center;
+            align-self: center;
+            margin-top: 175px;
+            white-space: nowrap;
+            font-family: "Wood Block One Regular", sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(30px, 5vw, 400px);
+            color: red;
+            animation: passandop 3s ease;
+            animation-timeline: scroll();
+        }
+        h1 span {
+            font-style: normal;
+            font-weight: 0;
+            display: inline-block;
+            justify-self: center;
+            align-self: center;
+            animation: spin 1s linear infinite;
+        }
+        h1 span:nth-child(2) {
+            animation: spin 1s linear infinite reverse;
+        }
              section {
             padding: 30px 20px;
             background-image: linear-gradient(180deg, black, red);
             background-size: 100% 500%;
             border: 5px solid red;
-            margin-top:100px ;
             border-radius: 40px;
             animation: passandop 3s ease;
             animation-timeline: scroll();
@@ -164,6 +188,10 @@
                 filter: blur(0%); opacity: 1;
             }
         }
+        @keyframes spin {
+            from {transform: rotate(360deg);}
+            to {transform: rotate(0deg);}
+        }
         @keyframes flip {
             from {transform: translate(-50%, -50%) rotateY(360deg);}
              to {transform: translate(-50%, -50%) rotateY(0deg);}   }
@@ -176,6 +204,7 @@
     <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
     
     </div>
+    <h1> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
     <section>
     <p> Um grupo de estudantes, preparados para o desafio.
         <br>
