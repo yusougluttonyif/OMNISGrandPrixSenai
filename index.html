@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/c3c8d4d74e1cce61ef017536ad775a18?family=Wood+Block+One+Regular">   
+    <style>
+        body {
+            scrollbar-width: none;
+            background-color: transparent;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            scroll-behavior: smooth;
+            perspective: 1000px;
+        }
+        ::-webkit-scrollbar {
+           display: none;
+        }
+        br {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        div:first-of-type {
+            box-shadow: 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
+            outline: 30px solid black;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+            background-image: linear-gradient(180deg, transparent, red);
+            background-size: 10% 200%;
+            animation: gradient 3s ease infinite alternate;
+        }
+        p.titulos {
+            position: absolute;
+            font-size: clamp(10px, 5vw, 100px);
+            z-index: 999999;
+            background-image: linear-gradient(180deg, rgb(206, 206, 206), transparent);
+            -webkit-background-clip: text;
+            background-clip: text; 
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            font-family: "Wood Block One Regular", serif;
+            white-space: nowrap;
+            top: 3vh;
+            left: 10%;
+            transform: translate(-10%, 0%) skewX(10deg);
+            animation: passandop 3s ease;
+            animation-timeline: auto;
+        }
+        p.titulos:nth-child(3) {
+            top: 70vh;
+            left: 75%;
+            transform: translate(-30%, 0%) skewX(-10deg);
+        }
+        p.titulos span {
+            background-image: linear-gradient(180deg, red, transparent);
+            -webkit-background-clip: text;
+            background-clip: text; 
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+         @keyframes gradient {
+            from {background-size: 0% 5000%;}
+         }
+        .p:not(.titulos) {
+            max-width: 100%;
+            animation: passandotext 10s infinite alternate;
+            font-family: 'Wood Block One Regular', sans-serif;
+            font-size: clamp(40px, 10vw, 1000px);
+            white-space: nowrap;
+            color: red;
+            margin-right: 20px;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .p:not(.titulos)::first-letter {
+            font-size: clamp(60px, 11vw, 1100px);
+        }
+        ::selection{
+            background-color: red;
+            color: white;
+        }
+        .p::selection {
+            background-color: transparent;
+            color: red;
+        }
+        .logo, .logolol {
+            user-select: none;
+           -webkit-user-select: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+;           width: clamp(20px, 75vw, 800px);
+            animation: passando 3.5s ease;
+            filter: brightness(0) drop-shadow(0px -3px 3px red);
+        }
+        .logolol:hover {
+            z-index: 99999999999999;
+            width: clamp(49px, 83vw, 900px);
+            transition: all 1s ease;
+            filter: brightness(1);
+            
+        }
+        p:not(.titulos)::first-letter {
+            font-size: clamp(40px, 3.5vw, 89px);
+            color: red;
+            font-family: "Wood Block One Regular",  sans-serif;
+        }
+        p:not(.titulos) {
+            font-family: "Teko", sans-serif;
+            font-weight: 400;
+            font-size: clamp(30px, 3vw, 78px);
+            color: whitesmoke;
+            animation: passandop 3s ease;
+            animation-timeline: scroll();
+        }
+        .p span {
+            animation: inherit;
+           animation-delay: calc(sibling-index() * 1s);
+           user-select: none;
+           -webkit-user-select: none;
+        }   
+             section {
+            padding: 30px 20px;
+            background-image: linear-gradient(180deg, black, red);
+            background-size: 100% 500%;
+            border: 5px solid red;
+            margin-top:100px ;
+            border-radius: 40px;
+            animation: passandop 3s ease;
+            animation-timeline: scroll();
+        }
+        @keyframes passando {
+            0% {
+                filter: blur(50px); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
+            }
+            100% {
+                filter: blur(0%); opacity: 1;
+            }
+        }
+            @keyframes passandotext {
+            0% {
+                 filter: blur(50px); transform: translateX(-1000px);
+            }
+            100% {
+                filter: blur(10px); transform:  translateX(-100px); opacity: 0.8;
+            }
+        }
+        @keyframes passandop {
+            0% {
+                filter: blur(50px); opacity: 0;
+            }
+            100% {
+                filter: blur(0%); opacity: 1;
+            }
+        }
+        @keyframes flip {
+            from {transform: translate(-50%, -50%) rotateY(360deg);}
+             to {transform: translate(-50%, -50%) rotateY(0deg);}   }
+    </style>
+</head>
+<body>
+    <div><p class="p">●<span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></p>
+    <p class="titulos">Empério Viltrum</p>
+    <p class="titulos">Ao<span> seu </span>dispor.</p>
+    <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
+    
+    </div>
+    <section>
+    <p> Um grupo de estudantes, preparados para o desafio.
+        <br>
+        <br>
+        ó, so pra deixar claro, a parte de cima não ta finalizada
+        muito menos essa parte
+        <br>
+        <br>
+        to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
+        </section>
+<script>
+    setTimeout(() => {
+       document.getElementById("nossalogo").className = "logolol"
+    }, 3500);
+    setInterval(() => {
+        document.getElementById("nossalogo").style.animation = "flip 0.75s ease";
+        setTimeout(() => {
+            document.getElementById("nossalogo").style.animation = "none";
+        }, 3000);
+    }, 7000);
+
+</script>
+    </body>
+</html>
