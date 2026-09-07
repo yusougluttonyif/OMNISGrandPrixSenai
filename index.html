@@ -14,7 +14,7 @@
             align-items: center;
             transition: all 0.5s ease;
             scroll-behavior: smooth;
-            perspective: 1000px;
+            perspective: 1000000px;
         }
         ::-webkit-scrollbar {
            display: none;
@@ -23,7 +23,7 @@
             user-select: none;
             -webkit-user-select: none;
         }
-        div:first-of-type {
+        .big {
             box-shadow: 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
             outline: 30px solid black;
             width: 100%;
@@ -120,8 +120,6 @@
             font-weight: 400;
             font-size: clamp(30px, 3vw, 78px);
             color: whitesmoke;
-            animation: passandop 3s ease;
-            animation-timeline: scroll();
         }
         .p span {
             animation: inherit;
@@ -140,8 +138,9 @@
             font-weight: 400;
             font-size: clamp(30px, 5vw, 400px);
             color: red;
-            animation: passandop 3s ease;
-            animation-timeline: scroll();
+            animation: passandop ease;
+            animation-timeline: view();
+            animation-range: entry 10% cover 40%;
         }
         h1 span {
             font-style: normal;
@@ -156,14 +155,26 @@
             animation: spin 1s linear infinite reverse;
         }
          section {
+            margin-bottom: 20px;
+            line-height: 2;
+            align-self: center;
+            justify-self: center;
+            max-width: 80%;
             display: flow-root;
             padding: 30px;
             background-image: linear-gradient(180deg, black, red);
             background-size: 100% 500%;
             border: 5px solid red;
-            border-radius: 40px;
-            animation: passandop 3s ease;
-            animation-timeline: scroll();
+            border-radius: 20px;
+            animation: flip2 ease;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+         }
+        section .ball {
+            width: clamp(10px, 1vw, 20px);
+            height: clamp(10px, 1vw, 20px);
+            background-color: red;
+            border-radius: 50%;
         }
         @keyframes passando {
             0% {
@@ -195,27 +206,58 @@
         }
         @keyframes flip {
             from {transform: translate(-50%, -50%) rotateY(360deg);}
-             to {transform: translate(-50%, -50%) rotateY(0deg);}   }
+            to {transform: translate(-50%, -50%) rotateY(0deg);}   }
+        @keyframes flip2 {
+            from {transform:rotateY(360deg);}
+            to {transform:rotateY(0deg);}   }
     </style>
 </head>
 <body>
-    <div><p class="p">●<span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></p>
+    <div class="big"><p class="p">●<span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></p>
     <p class="titulos">Empério Viltrum</p>
     <p class="titulos">Ao<span> seu </span>dispor.</p>
     <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
     
     </div>
     <h1> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
-    <section>
+    <section style="animation: passandop ease;
+            animation-timeline: view();
+            animation-range: entry 0% cover 20%;">
     <p> Um grupo de estudantes, preparados para o desafio.
-        <br>
         <br>
         ó, so pra deixar claro, a parte de cima não ta finalizada
         muito menos essa parte
         <br>
-        <br>
         to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
+       <section>
+        <div class="ball"></div>
+            <p>João Lucas
+                <br>
+                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            </p>
         </section>
+        <section>
+            <div class="ball"></div>
+           <p>Pedro Paulo
+                <br>
+                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            </p>
+        </section>
+        <section>
+            <div class="ball"></div>
+            <p>Geovane Santos
+                <br>
+                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            </p>
+        </section>
+        <section>
+            <div class="ball"></div>
+            <p>João Eduardo
+                <br>
+                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            </p>
+        </section>
+       </section>
 <script>
     setTimeout(() => {
        document.getElementById("nossalogo").className = "logolol"
@@ -226,7 +268,7 @@
             document.getElementById("nossalogo").style.animation = "none";
         }, 3000);
     }, 7000);
-
+ 
 </script>
     </body>
 </html>
