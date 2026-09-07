@@ -121,6 +121,30 @@
             font-size: clamp(30px, 3vw, 78px);
             color: whitesmoke;
         }
+        .text {
+            align-self: center;
+            justify-self: center;
+            font-family: "Wood Block One Regular", sans-serif;
+            color: white;
+            font-size: clamp(40px, 4vw, 90px);
+            cursor: pointer;
+            animation: shine 0.5s ease infinite alternate;
+            text-decoration: underline dotted red;
+            text-underline-offset: -50px;
+            text-decoration-skip-ink: none;
+        }
+        .text::marker {
+          font-size: 0px;
+        }
+        details::details-content {
+            opacity: 0;
+            filter: blur(50px);
+           transition: all 0.4s ease, content-visibility 0.4s allow-discrete;
+        }
+        details[open]::details-content {
+            filter: blur(0px);
+            opacity: 1;
+        }
         .p span {
             animation: inherit;
            animation-delay: calc(sibling-index() * 1s);
@@ -136,11 +160,12 @@
             font-family: "Wood Block One Regular", sans-serif;
             font-style: italic;
             font-weight: 400;
-            font-size: clamp(30px, 5vw, 400px);
+            font-size: clamp(30px, 5vw, 700px);
             color: red;
             animation: passandop ease;
             animation-timeline: view();
             animation-range: entry 10% cover 40%;
+            margin-bottom: -1px;
         }
         h1 span {
             font-style: normal;
@@ -155,26 +180,32 @@
             animation: spin 1s linear infinite reverse;
         }
          section {
+            corner-shape: scoop;
             margin-bottom: 20px;
             line-height: 2;
             align-self: center;
             justify-self: center;
-            max-width: 80%;
+            width: 80%;
             display: flow-root;
             padding: 30px;
             background-image: linear-gradient(180deg, black, red);
             background-size: 100% 500%;
             border: 5px solid red;
             border-radius: 20px;
-            animation: flip2 ease;
+            animation: passandop ease;
             animation-timeline: view();
-            animation-range: entry 0% cover 40%;
+            animation-range: entry -60% cover 17%;
          }
         section .ball {
             width: clamp(10px, 1vw, 20px);
             height: clamp(10px, 1vw, 20px);
             background-color: red;
             border-radius: 50%;
+        }
+        hr {
+            height: 4px;
+            background-color: red;
+            border: none;
         }
         @keyframes passando {
             0% {
@@ -196,6 +227,9 @@
             0% {
                 filter: blur(50px); opacity: 0;
             }
+            75% {
+                filter: blur(30px); opacity: 0.4;
+            }
             100% {
                 filter: blur(0%); opacity: 1;
             }
@@ -207,9 +241,6 @@
         @keyframes flip {
             from {transform: translate(-50%, -50%) rotateY(360deg);}
             to {transform: translate(-50%, -50%) rotateY(0deg);}   }
-        @keyframes flip2 {
-            from {transform:rotateY(360deg);}
-            to {transform:rotateY(0deg);}   }
     </style>
 </head>
 <body>
@@ -220,9 +251,7 @@
     
     </div>
     <h1> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
-    <section style="animation: passandop ease;
-            animation-timeline: view();
-            animation-range: entry 0% cover 20%;">
+    <section>
     <p> Um grupo de estudantes, preparados para o desafio.
         <br>
         ó, so pra deixar claro, a parte de cima não ta finalizada
@@ -231,31 +260,43 @@
         to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
        <section>
         <div class="ball"></div>
-            <p>João Lucas
-                <br>
+        <details>
+            <summary class="text">JOÃO LUCAS DO NASCIMENTO SILVA</summary>
+            <hr>
+            <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
             </p>
+            </details>
         </section>
         <section>
-            <div class="ball"></div>
-           <p>Pedro Paulo
-                <br>
+        <div class="ball"></div>
+        <details>
+            <summary class="text">PEDRO PAULO MORAIS ABOBRINHA</summary>
+            <hr>
+            <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
             </p>
+            </details>
         </section>
         <section>
-            <div class="ball"></div>
-            <p>Geovane Santos
-                <br>
+        <div class="ball"></div>
+        <details>
+            <summary class="text">GEOVANE SANTOS DA SILVA FILHO</summary>
+            <hr>
+            <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
             </p>
+            </details>
         </section>
         <section>
-            <div class="ball"></div>
-            <p>João Eduardo
-                <br>
+        <div class="ball"></div>
+        <details>
+            <summary class="text">JOÃO EDUARDO ABOBRINHA ABOBRINHA</summary>
+            <hr>
+            <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
             </p>
+            </details>
         </section>
        </section>
 <script>
@@ -271,4 +312,4 @@
  
 </script>
     </body>
-</html>
+</html>>
