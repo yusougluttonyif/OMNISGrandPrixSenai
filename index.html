@@ -14,7 +14,6 @@
                     position: relative;
                     justify-content: center;
                     align-items: center;
-                    transition: all 0.5s ease;
                     scroll-behavior: smooth;
                     perspective: 1000000px;
                 }
@@ -67,11 +66,12 @@
                     -webkit-text-fill-color: transparent;
                 }
                 @keyframes gradient {
-                    from {background-size: 0% 5000%;}
+                    from {background-size: 0% 500%;}
                 }
                 .p:not(.titulos) {
                     max-width: 100%;
-                    opacity: 0;
+                    opacity: 0.1;
+                    text-shadow: 0px 0px 20px red;
                     font-family: 'Wood Block One Regular', sans-serif;
                     font-size: clamp(40px, 10vw, 1000px);
                     white-space: nowrap;
@@ -80,6 +80,10 @@
                     margin: 10px;
                     transform: translateX(-100px);
                     margin-top: 20px;
+                    animation: bolas 7s ease infinite alternate-reverse;
+                }
+                @keyframes bolas {
+                    to {opacity: 0.05; transform: translateX(-500px);}
                 }
                 .p:not(.titulos)::first-letter {
                     font-size: clamp(60px, 11vw, 1100px);
@@ -96,22 +100,24 @@
                     user-select: none;
                     -webkit-user-select: none;
                     border-radius: 50%;
-                    transition: all 0.3s ease;
+                    transition: width 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease, height 0.3s ease,transform 0.3s ease;
                     z-index: 1;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    width: clamp(20px, 60vw, 650px);
+                    width: 70vh; height:70vh;
                     animation: passando 3.5s ease;
-                    filter: brightness(0) drop-shadow(0px -3px 3px red);
+                    filter: brightness(0);
+                    box-sizing: border-box;
+                    box-shadow: 0px -3px 5px red, 0px 2px 5px black;
                 }
                 .logolol:hover {
+                    height: 85vh;
                     z-index: 99999999999999;
-                    width: clamp(34px, 65vw, 690px);
-                    transition: all 1s ease;
-                    filter: brightness(1);
-                    
+                    width: 85vh;
+                    filter: brightness(1.2);
+                    transform: translate(-50%, -50%);
                 }
                 p:not(.titulos)::first-letter {
                     font-size: clamp(40px, 3.5vw, 89px);
@@ -162,6 +168,7 @@
                     margin-bottom: -1px;
                 }
                 h1 span {
+                    will-change: transform;
                     font-style: normal;
                     font-weight: 100;
                     font-family: "Wood Block One Regular", sans-serif;
@@ -248,10 +255,10 @@
                 }
                 @keyframes passando {
                     0% {
-                        filter: brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
+                        filter: brightness(0); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
                     }
                     100% {
-                        filter:  brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
+                        filter:  brightness(0); opacity: 1;
                     }
                 }
                 @keyframes passandop {
@@ -277,7 +284,7 @@
         </head>
         <body>
             <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
-            <p class="titulos">Empério Viltrum</p>
+            <p class="titulos">Império Viltrum</p>
             <p class="titulos">Ao<span> seu </span>dispor.</p>
             <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
             
