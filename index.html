@@ -204,9 +204,17 @@
             height: clamp(10px, 1vw, 20px);
             background-color: red;
             border-radius: 50%;
+            border: 2px solid red;
         }
         .section:hover .ball {
             transform: scale(2);
+            background-color: rgba(255, 0, 0, 0);
+            border: 2px solid red;
+        }
+        .section:hover .text {
+            transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete;
+            color: red;
+            text-decoration: underline dotted red;
         }
         hr {
             height: 4px;
