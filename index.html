@@ -199,11 +199,15 @@
             animation-timeline: view();
             animation-range: entry -60% cover 17%;
          }
-        section .ball {
+        .section .ball {
+            transition: all 0.3s ease;
             width: clamp(10px, 1vw, 20px);
             height: clamp(10px, 1vw, 20px);
             background-color: red;
             border-radius: 50%;
+        }
+        .section:hover .ball {
+            transform: scale(2);
         }
         hr {
             height: 4px;
@@ -261,7 +265,7 @@
         muito menos essa parte
         <br>
         to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
-       <section>
+       <section class="section">
         <div class="ball"></div>
         <details>
             <summary class="text">JOÃO LUCAS DO NASCIMENTO SILVA</summary>
@@ -271,7 +275,7 @@
             </p>
             </details>
         </section>
-        <section>
+        <section class="section">
         <div class="ball"></div>
         <details>
             <summary class="text">PEDRO PAULO MORAIS ABOBRINHA</summary>
@@ -281,7 +285,7 @@
             </p>
             </details>
         </section>
-        <section>
+        <section class="section">
         <div class="ball"></div>
         <details>
             <summary class="text">GEOVANE SANTOS DA SILVA FILHO</summary>
@@ -291,7 +295,7 @@
             </p>
             </details>
         </section>
-        <section>
+        <section class="section">
         <div class="ball"></div>
         <details>
             <summary class="text">JOÃO EDUARDO ABOBRINHA ABOBRINHA</summary>
@@ -302,6 +306,11 @@
             </details>
         </section>
        </section>
+       <br>
+       <br>
+       <br>
+       <br>
+<div class="big"><p class="p">●<span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></p>
 <script>
     setTimeout(() => {
        document.getElementById("nossalogo").className = "logolol"
@@ -315,4 +324,4 @@
  
 </script>
     </body>
-</html>>
+</html>
