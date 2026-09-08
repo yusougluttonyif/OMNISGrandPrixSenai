@@ -6,7 +6,7 @@ Eu não testei o site no celular, então recomendo entrar no PC.
 
 (mas eu to fazendo e me divertindo, e aprendendo também!)
 
-# Atualização - 07/08/2026
+# Atualização - 07/09/2026
 O site está mais adequado para o uso em celular. 
 
 O esqueleto dele tá praticamente pronto, apenas falta o conteúdo.
