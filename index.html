@@ -181,6 +181,8 @@
             animation: spin 1s linear infinite reverse;
         }
          section {
+            transition: all 0.4s allow-discrete;
+            box-shadow: 0px 0px 50px black, 0px 0px 1px black;
             corner-shape: scoop;
             margin-bottom: 20px;
             line-height: 2;
@@ -216,6 +218,10 @@
             color: red;
             text-decoration: underline dotted red;
         }
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 50px red;
+        }
         hr {
             height: 4px;
             background-color: red;
@@ -223,10 +229,10 @@
         }
         a {
             text-align: center;
-            transition: transform 0.3s allow-discrete;
-            font-size: clamp(10px, 2vw, 60px);
+            transition: all 0.3s allow-discrete;
+            font-size: clamp(30px, 2vw, 75px);
             white-space: wrap;
-            width: 20%;
+            width: 25%;
             margin: 10px;
             font-family: "Wood Block One Regular", sans-serif;
             color: white;
@@ -238,10 +244,11 @@
             text-decoration: underline dotted rgba(255, 0, 0, 0.228);
         }
         a:hover {
-            transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete, transform 0.4s allow-discrete;
+            transition: all 0.4s allow-discrete;
             transform: scale(1.02);
             text-decoration: underline dotted red;
             color: red;
+            box-shadow: 0px 0px 10px red;
         }
         @keyframes passando {
             0% {
