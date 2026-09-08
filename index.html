@@ -1,359 +1,364 @@
-<!DOCTYPE HTML>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+        <!DOCTYPE HTML>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/c3c8d4d74e1cce61ef017536ad775a18?family=Wood+Block+One+Regular">   
-    <style>
-        body {
-            scrollbar-width: none;
-            background-color: transparent;
-            height: 100vh;
-            display: grid;
-            position: relative;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.5s ease;
-            scroll-behavior: smooth;
-            perspective: 1000000px;
-        }
-        ::-webkit-scrollbar {
-           display: none;
-        }
-        br {
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        .big {
-            box-shadow: 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
-            outline: 30px solid black;
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            background-color: black;
-            background-image: linear-gradient(180deg, transparent, red);
-            background-size: 10% 200%;
-            animation: gradient 3s ease infinite alternate;
-        }
-        p.titulos {
-            position: absolute;
-            font-size: clamp(10px, 5vw, 100px);
-            z-index: 999999;
-            background-image: linear-gradient(180deg, rgb(206, 206, 206), transparent);
-            -webkit-background-clip: text;
-            background-clip: text; 
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            font-family: "Wood Block One Regular", serif;
-            white-space: nowrap;
-            top: 3vh;
-            left: 10%;
-            transform: translate(-10%, 0%) skewX(10deg);
-            animation: passandop 3s ease;
-            animation-timeline: auto;
-        }
-        p.titulos:nth-child(3) {
-            top: 70vh;
-            left: 75%;
-            transform: translate(-30%, 0%) skewX(-10deg);
-        }
-        p.titulos span {
-            background-image: linear-gradient(180deg, red, transparent);
-            -webkit-background-clip: text;
-            background-clip: text; 
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-         @keyframes gradient {
-            from {background-size: 0% 5000%;}
-         }
-        .p:not(.titulos) {
-            max-width: 100%;
-            animation: passandotext 10s infinite alternate;
-            font-family: 'Wood Block One Regular', sans-serif;
-            font-size: clamp(40px, 10vw, 1000px);
-            white-space: nowrap;
-            color: red;
-            margin-right: 20px;
-            margin: 10px;
-            margin-top: 20px;
-        }
-        .p:not(.titulos)::first-letter {
-            font-size: clamp(60px, 11vw, 1100px);
-        }
-        ::selection{
-            background-color: red;
-            color: white;
-        }
-        .p::selection {
-            background-color: transparent;
-            color: red;
-        }
-        .logo, .logolol {
-            user-select: none;
-            -webkit-user-select: none;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            z-index: 1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-;           width: clamp(20px, 60vw, 650px);
-            animation: passando 3.5s ease;
-            filter: brightness(0) drop-shadow(0px -3px 3px red);
-        }
-        .logolol:hover {
-            z-index: 99999999999999;
-            width: clamp(34px, 65vw, 690px);
-            transition: all 1s ease;
-            filter: brightness(1);
+        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/c3c8d4d74e1cce61ef017536ad775a18?family=Wood+Block+One+Regular">   
+            <style>
+                body {
+                    scrollbar-width: none;
+                    background-color: transparent;
+                    height: 100vh;
+                    display: grid;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.5s ease;
+                    scroll-behavior: smooth;
+                    perspective: 1000000px;
+                }
+                ::-webkit-scrollbar {
+                display: none;
+                }
+                br {
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+                .big {
+                    box-shadow: 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
+                    outline: 30px solid black;
+                    width: 100%;
+                    height: 100vh;
+                    position: relative;
+                    overflow: hidden;
+                    background-color: black;
+                    background-image: linear-gradient(180deg, transparent, red);
+                    background-size: 10% 200%;
+                    animation: gradient 3s ease infinite alternate;
+                }
+                p.titulos {
+                    position: absolute;
+                    font-size: clamp(10px, 5vw, 100px);
+                    z-index: 999999;
+                    background-image: linear-gradient(180deg, rgb(206, 206, 206), transparent);
+                    -webkit-background-clip: text;
+                    background-clip: text; 
+                    color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    font-family: "Wood Block One Regular", serif;
+                    white-space: nowrap;
+                    top: 3vh;
+                    left: 10%;
+                    transform: translate(-10%, 0%) skewX(10deg);
+                    animation: passandop 3s ease;
+                    animation-timeline: auto;
+                }
+                p.titulos:nth-child(3) {
+                    top: 70vh;
+                    left: 75%;
+                    transform: translate(-30%, 0%) skewX(-10deg);
+                }
+                p.titulos span {
+                    background-image: linear-gradient(180deg, red, transparent);
+                    -webkit-background-clip: text;
+                    background-clip: text; 
+                    color: transparent;
+                    -webkit-text-fill-color: transparent;
+                }
+                @keyframes gradient {
+                    from {background-size: 0% 5000%;}
+                }
+                .p:not(.titulos) {
+                    max-width: 100%;
+                    animation: passandotext 10s infinite alternate;
+                    font-family: 'Wood Block One Regular', sans-serif;
+                    font-size: clamp(40px, 10vw, 1000px);
+                    white-space: nowrap;
+                    color: red;
+                    margin-right: 20px;
+                    margin: 10px;
+                    margin-top: 20px;
+                }
+                .p:not(.titulos)::first-letter {
+                    font-size: clamp(60px, 11vw, 1100px);
+                }
+                ::selection{
+                    background-color: red;
+                    color: white;
+                }
+                .p::selection {
+                    background-color: transparent;
+                    color: red;
+                }
+                .logo, .logolol {
+                    user-select: none;
+                    -webkit-user-select: none;
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                    z-index: 1;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: clamp(20px, 60vw, 650px);
+                    animation: passando 3.5s ease;
+                    filter: brightness(0) drop-shadow(0px -3px 3px red);
+                }
+                .logolol:hover {
+                    z-index: 99999999999999;
+                    width: clamp(34px, 65vw, 690px);
+                    transition: all 1s ease;
+                    filter: brightness(1);
+                    
+                }
+                p:not(.titulos)::first-letter {
+                    font-size: clamp(40px, 3.5vw, 89px);
+                    color: red;
+                    font-family: "Wood Block One Regular",  sans-serif;
+                }
+                p:not(.titulos) {
+                    font-family: "Teko", sans-serif;
+                    font-weight: 400;
+                    font-size: clamp(40px, 3vw, 78px);
+                    color: whitesmoke;
+                }
+                .text {
+                    align-self: center;
+                    justify-self: center;
+                    font-family: "Wood Block One Regular", sans-serif;
+                    color: white;
+                    font-size: clamp(40px, 4vw, 90px);
+                    cursor: pointer;
+                    animation: shine 0.5s ease infinite alternate;
+                    text-decoration: underline dotted rgba(255, 0, 0, 0.257);
+                    text-decoration-skip-ink: none;
+                }
+                .text::marker {
+                font-size: 0px;
+                }
+                details::details-content {
+                    opacity: 0;
+                transition: all 0.4s ease, content-visibility 0.4s allow-discrete;
+                }
+                details[open]::details-content {
+                    opacity: 1;
+                }
+                h1 {
+                    display: grid;
+                    justify-self: center;
+                    align-self: center;
+                    margin-top: 175px;
+                    white-space: nowrap;
+                    font-family: "Wood Block One Regular", sans-serif;
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: clamp(30px, 5vw, 700px);
+                    color: red;
+                    animation: passandop ease;
+                    animation-timeline: view();
+                    animation-range: entry 10% cover 40%;
+                    margin-bottom: -1px;
+                }
+                h1 span {
+                    font-style: normal;
+                    font-weight: 100;
+                    font-family: "Wood Block One Regular", sans-serif;
+                    display: inline-block;
+                    justify-self: center;
+                    align-self: center;
+                    animation: spin 1s linear infinite;
+                }
+                h1 span:nth-child(2) {
+                    animation: spin 1s linear infinite reverse;
+                }
+                section {
+                    place-items: center;
+                    transition: all 0.4s allow-discrete;
+                    box-shadow: 0px 0px 50px black, 0px 0px 1px black;
+                    corner-shape: scoop;
+                    margin-bottom: 20px;
+                    line-height: 2;
+                    align-self: center;
+                    justify-self: center;
+                    width: 80%;
+                    display: grid;
+                    position: relative;
+                    padding: 30px;
+                    background-image: linear-gradient(180deg, black, red);
+                    background-size: 100% 500%;
+                    border: 5px solid red;
+                    border-radius: 20px;
+                    animation: passandop ease;
+                    animation-timeline: view();
+                    animation-range: entry -60% cover 17%;
+                }
+                .section .ball {
+                    transition: all 0.3s ease;
+                    width: clamp(10px, 1vw, 20px);
+                    height: clamp(10px, 1vw, 20px);
+                    background-color: red;
+                    border-radius: 50%;
+                    border: 2px solid red;
+                }
+                .section:hover .ball {
+                    transform: scale(2);
+                    background-color: rgba(255, 0, 0, 0);
+                    border: 2px solid red;
+                }
+                .section:hover .text {
+                    transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete;
+                    color: red;
+                    text-decoration: underline dotted red;
+                }
+                .section:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0px 0px 50px red;
+                }
+                hr {
+                    height: 4px;
+                    background-color: red;
+                    border: none;
+                }
+                a, .a {
+                    text-align: center;
+                    transition: all 0.3s allow-discrete;
+                    font-size: clamp(30px, 2vw, 75px);
+                    white-space: wrap;
+                    width: 100%;
+                    margin: 10px;
+                    font-family: "Wood Block One Regular", sans-serif;
+                    color: white;
+                    background-image: linear-gradient(180deg, black, red);
+                    background-size: 100% 300%;
+                    border: 2px solid red;
+                    corner-shape: scoop;
+                    border-radius: 5px;
+                    text-decoration: underline dotted rgba(255, 0, 0, 0.228);
+                }
+                a:hover {
+                    transition: all 0.4s allow-discrete;
+                    transform: scale(1.02);
+                    text-decoration: underline dotted red;
+                    color: red;
+                    box-shadow: 0px 0px 10px red;
+                }
+                @keyframes passando {
+                    0% {
+                        filter: brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
+                    }
+                    100% {
+                        filter:  brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
+                    }
+                }
+                    @keyframes passandotext {
+                    0% {
+                        filter: blur(30px); transform: translateX(-1000px);
+                    }
+                    100% {
+                        filter: blur(30px); transform:  translateX(-100px); opacity: 0.8;
+                    }
+                }
+                @keyframes passandop {
+                    0% {
+                        opacity: 0;
+                    }
+                    75% {
+                        opacity: 0.4;
+                    }
+                    100% {
+                         opacity: 1;
+                    }
+                }
+                @keyframes spin {
+                    from {transform: rotate(360deg);}
+                    to {transform: rotate(0deg);}
+                }
+                @keyframes flip {
+                    from {transform: translate(-50%, -50%) rotateY(360deg);}
+                    to {transform: translate(-50%, -50%) rotateY(0deg);}   }
+            </style>
+        </head>
+        <body>
+            <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
+            <p class="titulos">Empério Viltrum</p>
+            <p class="titulos">Ao<span> seu </span>dispor.</p>
+            <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
             
-        }
-        p:not(.titulos)::first-letter {
-            font-size: clamp(40px, 3.5vw, 89px);
-            color: red;
-            font-family: "Wood Block One Regular",  sans-serif;
-        }
-        p:not(.titulos) {
-            font-family: "Teko", sans-serif;
-            font-weight: 400;
-            font-size: clamp(40px, 3vw, 78px);
-            color: whitesmoke;
-        }
-        .text {
-            align-self: center;
-            justify-self: center;
-            font-family: "Wood Block One Regular", sans-serif;
-            color: white;
-            font-size: clamp(40px, 4vw, 90px);
-            cursor: pointer;
-            animation: shine 0.5s ease infinite alternate;
-            text-decoration: underline dotted rgba(255, 0, 0, 0.257);
-            text-decoration-skip-ink: none;
-        }
-        .text::marker {
-          font-size: 0px;
-        }
-        details::details-content {
-            opacity: 0;
-            filter: blur(50px);
-           transition: all 0.4s ease, content-visibility 0.4s allow-discrete;
-        }
-        details[open]::details-content {
-            filter: blur(0px);
-            opacity: 1;
-        }
-        h1 {
-            display: grid;
-            justify-self: center;
-            align-self: center;
-            margin-top: 175px;
-            white-space: nowrap;
-            font-family: "Wood Block One Regular", sans-serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: clamp(30px, 5vw, 700px);
-            color: red;
-            animation: passandop ease;
-            animation-timeline: view();
-            animation-range: entry 10% cover 40%;
-            margin-bottom: -1px;
-        }
-        h1 span {
-            font-style: normal;
-            font-weight: 100;
-            font-family: "Wood Block One Regular", sans-serif;
-            display: inline-block;
-            justify-self: center;
-            align-self: center;
-            animation: spin 1s linear infinite;
-        }
-        h1 span:nth-child(2) {
-            animation: spin 1s linear infinite reverse;
-        }
-         section {
-            transition: all 0.4s allow-discrete;
-            box-shadow: 0px 0px 50px black, 0px 0px 1px black;
-            corner-shape: scoop;
-            margin-bottom: 20px;
-            line-height: 2;
-            align-self: center;
-            justify-self: center;
-            width: 80%;
-            display: grid;
-            position: relative;
-            padding: 30px;
-            background-image: linear-gradient(180deg, black, red);
-            background-size: 100% 500%;
-            border: 5px solid red;
-            border-radius: 20px;
-            animation: passandop ease;
-            animation-timeline: view();
-            animation-range: entry -60% cover 17%;
-         }
-        .section .ball {
-            transition: all 0.3s ease;
-            width: clamp(10px, 1vw, 20px);
-            height: clamp(10px, 1vw, 20px);
-            background-color: red;
-            border-radius: 50%;
-            border: 2px solid red;
-        }
-        .section:hover .ball {
-            transform: scale(2);
-            background-color: rgba(255, 0, 0, 0);
-            border: 2px solid red;
-        }
-        .section:hover .text {
-            transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete;
-            color: red;
-            text-decoration: underline dotted red;
-        }
-        .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 0px 50px red;
-        }
-        hr {
-            height: 4px;
-            background-color: red;
-            border: none;
-        }
-        a {
-            text-align: center;
-            transition: all 0.3s allow-discrete;
-            font-size: clamp(30px, 2vw, 75px);
-            white-space: wrap;
-            width: 25%;
-            margin: 10px;
-            font-family: "Wood Block One Regular", sans-serif;
-            color: white;
-            background-image: linear-gradient(180deg, black, red);
-            background-size: 100% 300%;
-            border: 2px solid red;
-            corner-shape: scoop;
-            border-radius: 5px;
-            text-decoration: underline dotted rgba(255, 0, 0, 0.228);
-        }
-        a:hover {
-            transition: all 0.4s allow-discrete;
-            transform: scale(1.02);
-            text-decoration: underline dotted red;
-            color: red;
-            box-shadow: 0px 0px 10px red;
-        }
-        @keyframes passando {
-            0% {
-                filter: blur(50px) brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
-            }
-            100% {
-                filter: blur(0%) brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
-            }
-        }
-            @keyframes passandotext {
-            0% {
-                 filter: blur(50px); transform: translateX(-1000px);
-            }
-            100% {
-                filter: blur(10px); transform:  translateX(-100px); opacity: 0.8;
-            }
-        }
-        @keyframes passandop {
-            0% {
-                filter: blur(50px); opacity: 0;
-            }
-            75% {
-                filter: blur(30px); opacity: 0.4;
-            }
-            100% {
-                filter: blur(0%); opacity: 1;
-            }
-        }
-        @keyframes spin {
-            from {transform: rotate(360deg);}
-            to {transform: rotate(0deg);}
-        }
-        @keyframes flip {
-            from {transform: translate(-50%, -50%) rotateY(360deg);}
-            to {transform: translate(-50%, -50%) rotateY(0deg);}   }
-    </style>
-</head>
-<body>
-    <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
-    <p class="titulos">Empério Viltrum</p>
-    <p class="titulos">Ao<span> seu </span>dispor.</p>
-    <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
-    
-    </div>
-    <section><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
-    <a href="#quemsomosnos">Quem somos nos</a></section>
-    <h1 id="quemsomosnos"> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
-    <section>
-    <p style="max-width: 80%; align-self: center; justify-self: center;"> Um grupo de estudantes, preparados para o desafio.
-        <br>
-        ó, so pra deixar claro, a parte de cima não ta finalizada
-        muito menos essa parte
-        <br>
-        to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
-       <section class="section">
-        <div class="ball"></div>
-        <details>
-            <summary class="text">JOÃO LUCAS DO NASCIMENTO SILVA</summary>
-            <hr>
-            <p>
-                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            </p>
-            </details>
-        </section>
-        <section class="section">
-        <div class="ball"></div>
-        <details>
-            <summary class="text">PEDRO PAULO MORAIS DE CARVALHO</summary>
-            <hr>
-            <p>
-                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            </p>
-            </details>
-        </section>
-        <section class="section">
-        <div class="ball"></div>
-        <details>
-            <summary class="text">GEOVANE SANTOS DA SILVA FILHO</summary>
-            <hr>
-            <p>
-                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            </p>
-            </details>
-        </section>
-        <section class="section">
-        <div class="ball"></div>
-        <details>
-            <summary class="text">JOÃO EDUARDO DE OLIVEIRA SANTOS</summary>
-            <hr>
-            <p>
-                 loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            </p>
-            </details>
-        </section>
-       </section>
-       <br>
-       <br>
-       <br>
-       <br>
-<div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
-<script>
-    setTimeout(() => {
-       document.getElementById("nossalogo").className = "logolol"
-    }, 3500);
-    setInterval(() => {
-        document.getElementById("nossalogo").style.animation = "flip 0.75s ease";
-        setTimeout(() => {
-            document.getElementById("nossalogo").style.animation = "none";
-        }, 3000);
-    }, 7000);
- 
-</script>
-    </body>
-</html>
+            </div>
+            <section style="margin-top: 100px;"><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
+            <a href="#quemsomosnos">Quem somos nos</a><a href="#quemsomosnos">Quem somos nos</a></section>
+            <h1 id="quemsomosnos"> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
+            <section>
+            <p style="max-width: 80%; align-self: center; justify-self: center;"> Um grupo de estudantes, preparados para o desafio.
+                <br>
+                ó, so pra deixar claro, a parte de cima não ta finalizada
+                muito menos essa parte
+                <br>
+                to pensando no que adicionar, mas vai ter uma frase de efeito no inicio sla </p>
+            <section class="section">
+                <div class="ball"></div>
+                <details>
+                    <summary class="text">JOÃO LUCAS DO NASCIMENTO SILVA</summary>
+                    <hr>
+                    <p>
+                        loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                    </details>
+                </section>
+                <section class="section">
+                <div class="ball"></div>
+                <details>
+                    <summary class="text">PEDRO PAULO MORAIS DE CARVALHO</summary>
+                    <hr>
+                    <p>
+                        loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                    </details>
+                </section>
+                <section class="section">
+                <div class="ball"></div>
+                <details>
+                    <summary class="text">GEOVANE SANTOS DA SILVA FILHO</summary>
+                    <hr>
+                    <p>
+                        loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                    </details>
+                </section>
+                <section class="section">
+                <div class="ball"></div>
+                <details>
+                    <summary class="text">JOÃO EDUARDO DE OLIVEIRA SANTOS</summary>
+                    <hr>
+                    <p>
+                        loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                    </details>
+                </section>
+            </section>
+            <h1><span>+</span>NOSSA ULTIMA PARTICIPAÇÃO<span>+</span></h1>
+            <section><p>Em <span style="color: red;">[data]</span>, o grupo OMNIS participou do Grand Prix, oferencendo uma resolução para a Petrobras, de um problema relacionado a <span style="color: red;">[o problema].</span></p>
+                        <div class="a"><iframe style="margin: 1%;" src="https://www.youtube.com/embed/QzGDPpS8dMc?si=9acdJ3EUB6s4Wgag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe style="display: inline-block; margin: 1%;" src="https://www.youtube.com/embed/JqrJ1JtadJs?si=3sH4JZnb3mA7m76R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            
+            </section>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+        <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
+        <script>
+            setTimeout(() => {
+            document.getElementById("nossalogo").className = "logolol"
+            }, 3500);
+            setInterval(() => {
+                document.getElementById("nossalogo").style.animation = "flip 1s ease";
+                setTimeout(() => {
+                    document.getElementById("nossalogo").style.animation = "none";
+                }, 2000);
+            }, 7000);
+        
+        </script>
+            </body>
+        </html>
