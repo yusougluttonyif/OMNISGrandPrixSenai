@@ -91,7 +91,7 @@
         }
         .logo, .logolol {
             user-select: none;
-           -webkit-user-select: none;
+            -webkit-user-select: none;
             border-radius: 50%;
             transition: all 0.3s ease;
             z-index: 1;
@@ -152,7 +152,7 @@
            -webkit-user-select: none;
         }   
         h1 {
-            display:flow-root;
+            display: grid;
             justify-self: center;
             align-self: center;
             margin-top: 175px;
@@ -187,6 +187,7 @@
             justify-self: center;
             width: 80%;
             display: grid;
+            position: relative;
             padding: 30px;
             background-image: linear-gradient(180deg, black, red);
             background-size: 100% 500%;
@@ -209,10 +210,10 @@
         }
         @keyframes passando {
             0% {
-                filter: blur(50px); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
+                filter: blur(50px) brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
             }
             100% {
-                filter: blur(0%); opacity: 1;
+                filter: blur(0%) brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
             }
         }
             @keyframes passandotext {
