@@ -78,6 +78,7 @@
                     color: red;
                     margin-right: 20px;
                     margin: 10px;
+                    transform: translateX(-100px);
                     margin-top: 20px;
                 }
                 .p:not(.titulos)::first-letter {
@@ -235,6 +236,9 @@
                     border-radius: 5px;
                     text-decoration: underline dotted rgba(255, 0, 0, 0.228);
                 }
+                a {
+                    place-self: center;
+                }
                 a:hover {
                     transition: all 0.4s allow-discrete;
                     transform: scale(1.02);
@@ -252,10 +256,10 @@
                 }
                     @keyframes passandotext {
                     0% {
-                        filter: blur(30px); transform: translateX(-1000px);
+                        filter: blur(30px);
                     }
                     100% {
-                        filter: blur(30px); transform:  translateX(-100px); opacity: 0.8;
+                        filter: blur(30px); opacity: 0.8;
                     }
                 }
                 @keyframes passandop {
@@ -273,6 +277,7 @@
                     from {transform: rotate(360deg);}
                     to {transform: rotate(0deg);}
                 }
+                /* provavelmente nao vai ser usado*/
                 @keyframes flip {
                     from {transform: translate(-50%, -50%) rotateY(360deg);}
                     to {transform: translate(-50%, -50%) rotateY(0deg);}   }
@@ -351,12 +356,6 @@
             setTimeout(() => {
             document.getElementById("nossalogo").className = "logolol"
             }, 3500);
-            setInterval(() => {
-                document.getElementById("nossalogo").style.animation = "flip 1s ease";
-                setTimeout(() => {
-                    document.getElementById("nossalogo").style.animation = "none";
-                }, 2000);
-            }, 7000);
         
         </script>
             </body>
