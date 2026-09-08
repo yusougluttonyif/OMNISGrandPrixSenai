@@ -221,6 +221,28 @@
             background-color: red;
             border: none;
         }
+        a {
+            text-align: center;
+            transition: transform 0.3s allow-discrete;
+            font-size: clamp(10px, 2vw, 60px);
+            white-space: nowrap;
+            width: 20%;
+            margin: 10px;
+            font-family: "Wood Block One Regular", sans-serif;
+            color: white;
+            background-image: linear-gradient(180deg, black, red);
+            background-size: 100% 300%;
+            border: 2px solid red;
+            corner-shape: scoop;
+            border-radius: 5px;
+            text-decoration: underline dotted rgba(255, 0, 0, 0.228);
+        }
+        a:hover {
+            transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete, transform 0.4s allow-discrete;
+            transform: scale(1.02);
+            text-decoration: underline dotted red;
+            color: red;
+        }
         @keyframes passando {
             0% {
                 filter: blur(50px) brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
@@ -264,7 +286,9 @@
     <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
     
     </div>
-    <h1> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
+    <section><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
+    <a href="#quemsomosnos">Quem somos nos</a></section>
+    <h1 id="quemsomosnos"> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
     <section>
     <p> Um grupo de estudantes, preparados para o desafio.
         <br>
@@ -285,7 +309,7 @@
         <section class="section">
         <div class="ball"></div>
         <details>
-            <summary class="text">PEDRO PAULO MORAIS ABOBRINHA</summary>
+            <summary class="text">PEDRO PAULO MORAIS DE CARVALHO</summary>
             <hr>
             <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
@@ -305,7 +329,7 @@
         <section class="section">
         <div class="ball"></div>
         <details>
-            <summary class="text">JOÃO EDUARDO ABOBRINHA ABOBRINHA</summary>
+            <summary class="text">JOÃO EDUARDO DE OLIVEIRA SANTOS</summary>
             <hr>
             <p>
                  loem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
