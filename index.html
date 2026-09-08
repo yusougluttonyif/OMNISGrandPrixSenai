@@ -26,7 +26,7 @@
                     -webkit-user-select: none;
                 }
                 .big {
-                    box-shadow: 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
+                    box-shadow: 0px 0px 50px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
                     outline: 30px solid black;
                     width: 100%;
                     height: 100vh;
@@ -34,7 +34,7 @@
                     overflow: hidden;
                     background-color: black;
                     background-image: linear-gradient(180deg, transparent, red);
-                    background-size: 10% 200%;
+                    background-size: 100% 200%;
                     animation: gradient 3s ease infinite alternate;
                 }
                 p.titulos {
@@ -71,7 +71,7 @@
                 }
                 .p:not(.titulos) {
                     max-width: 100%;
-                    animation: passandotext 10s infinite alternate;
+                    opacity: 0;
                     font-family: 'Wood Block One Regular', sans-serif;
                     font-size: clamp(40px, 10vw, 1000px);
                     white-space: nowrap;
@@ -175,7 +175,7 @@
                 }
                 section {
                     transition: all 0.4s allow-discrete;
-                    box-shadow: 0px 0px 50px black, 0px 0px 1px black;
+                    box-shadow: 0px 0px 20px black, 0px 0px 1px black;
                     corner-shape: scoop;
                     margin-bottom: 20px;
                     line-height: 2;
@@ -252,14 +252,6 @@
                     }
                     100% {
                         filter:  brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
-                    }
-                }
-                    @keyframes passandotext {
-                    0% {
-                        filter: blur(30px);
-                    }
-                    100% {
-                        filter: blur(30px); opacity: 0.8;
                     }
                 }
                 @keyframes passandop {
