@@ -143,10 +143,12 @@
                 font-size: 0px;
                 }
                 details::details-content {
+                    transform: translateY(-25px);
                     opacity: 0;
-                transition: all 0.4s ease, content-visibility 0.4s allow-discrete;
+                transition: transform 0.3s allow-discrete, opacity 0.3s allow-discrete, content-visibility 0.3s allow-discrete;
                 }
                 details[open]::details-content {
+                    transform: translateY(0px);
                     opacity: 1;
                 }
                 h1 {
@@ -222,6 +224,14 @@
                 }
                 hr {
                     height: 4px;
+                    width: 100%;
+                    background-color: red;
+                    border: none;
+                }
+                #outside {
+                    margin-top: 300px;
+                    height: 4px;
+                    width: 100%;
                     background-color: red;
                     border: none;
                 }
@@ -295,7 +305,10 @@
             
             </div>
             <section style="margin-top: 100px;"><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
-            <a href="#quemsomosnos">Quem somos nos</a><br><a href="#nossaultimapart">Nossa ultima PARTICIPAÇÃO</a></section>
+            <a href="#quemsomosnos">Quem somos nos</a>
+            <br>
+            <a href="#nossaultimapart">Nossa ultima PARTICIPAÇÃO</a></section>
+            <hr id="outside">
             <h1 id="quemsomosnos"> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
             <section>
             <p style="max-width: 80%; align-self: center; justify-self: center;"> Um grupo de estudantes, preparados para o desafio.
@@ -345,6 +358,7 @@
                     </details>
                 </section>
             </section>
+            <hr id="outside">
             <h1 id="nossaultimapart"><span>+</span>NOSSA ULTIMA PARTICIPAÇÃO<span>+</span></h1>
             <section><p>Em <span style="color: red;">[data]</span>, o grupo OMNIS participou do Grand Prix, oferencendo uma resolução para a Petrobras, de um problema relacionado a <span style="color: red;">[o problema].</span></p>
                         <div class="a"><iframe class="hold" src="https://www.youtube.com/embed/QzGDPpS8dMc?si=9acdJ3EUB6s4Wgag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
