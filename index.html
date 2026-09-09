@@ -114,6 +114,9 @@
                     filter: brightness(1.13);
                     transform: translate(-50%, -50%) scale(1.3);
                 }
+                .logolol {
+                    animation: none;
+                }
                 p:not(.titulos)::first-letter {
                     font-size: clamp(40px, 3.5vw, 89px);
                     color: red;
@@ -215,7 +218,7 @@
                 }
                 .section:hover {
                     transform: translateY(-10px);
-                    box-shadow: 0px 0px 50px red;
+                    box-shadow: 0px 10px 13px red;
                 }
                 hr {
                     height: 4px;
@@ -244,10 +247,10 @@
                 }
                 a:hover {
                     transition: all 0.4s allow-discrete;
-                    transform: scale(1.02);
+                    transform: translateY(-10px);
                     text-decoration: underline dotted red;
                     color: red;
-                    box-shadow: 0px 0px 10px red;
+                    box-shadow: 0px 5px 15px red;
                 }
                 .hold {
                     display: inline-flex;
@@ -279,17 +282,16 @@
                     from {transform: rotate(360deg);}
                     to {transform: rotate(0deg);}
                 }
-                /* provavelmente nao vai ser usado*/
                 @keyframes flip {
-                    from {transform: translate(-50%, -50%) rotateY(360deg);}
-                    to {transform: translate(-50%, -50%) rotateY(0deg);}   }
+                    from {transform: translate(-50%, -50%) scale(1.3)  rotateY(360deg);}
+                    to {transform: translate(-50%, -50%) scale(1.3)  rotateY(0deg);}   }
             </style>
         </head>
         <body>
             <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
             <p class="titulos">Império Viltrum</p>
             <p class="titulos">Ao<span> seu </span>dispor.</p>
-            <img id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
+            <img onclick="logoflip()" id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
             
             </div>
             <section style="margin-top: 100px;"><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
@@ -357,9 +359,15 @@
         <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
         <script>
             setTimeout(() => {
-            document.getElementById("nossalogo").className = "logolol"
+            document.getElementById("nossalogo").className = "logolol";
             }, 3500);
         
+            function logoflip() {
+                document.getElementById("nossalogo").style.animation = "flip 0.7s ease";
+                setTimeout(() => {
+                    document.getElementById("nossalogo").style.animation = "none";
+                }, 701);
+            }
         </script>
             </body>
         </html>
