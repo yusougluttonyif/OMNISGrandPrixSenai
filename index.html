@@ -1,429 +1,565 @@
-        <!DOCTYPE HTML>
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/c3c8d4d74e1cce61ef017536ad775a18?family=Wood+Block+One+Regular">   
-            <style>
-                html {scroll-behavior: smooth;}
-                body {
-                    scrollbar-width: none;
-                    background-color: transparent;
-                    height: 100vh;
-                    display: grid;
-                    position: relative;
-                    justify-content: center;
-                    align-items: center;
-                    background-color:rgb(238, 237, 237);
-                    perspective: 1000000px;
-                }
-                ::-webkit-scrollbar {
-                display: none;
-                }
-                br {
-                    user-select: none;
-                    -webkit-user-select: none;
-                }
-                .big {
-                    box-shadow: 0px 0px 50px black, 0px 0px 100px black, 0px 0px 100px black, 0px 0px 100px black;
-                    outline: 30px solid black;
-                    width: 100%;
-                    height: 100vh;
-                    opacity: 1;
-                    position: relative;
-                    overflow: hidden;
-                    animation: show 2s ease;
-                    background-color: black;
-                    background-image: radial-gradient(circle, rgb(129, 3, 3), black);
-                }
-                @keyframes show {
-                    from {opacity: 0;} to {opacity: 1;}
-                }
-                p.titulos {
-                    position: absolute;
-                    font-size: clamp(10px, 5vw, 100px);
-                    z-index: 999999;
-                    background-image: linear-gradient(180deg, rgb(206, 206, 206), transparent);
-                    -webkit-background-clip: text;
-                    background-clip: text; 
-                    color: transparent;
-                    -webkit-text-fill-color: transparent;
-                    font-family: "Wood Block One Regular", serif;
-                    white-space: nowrap;
-                    top: 3vh;
-                    left: 10%;
-                    transform: translate(-10%, 0%) skewX(10deg);
-                    animation: passandop 3s ease;
-                    animation-timeline: auto;
-                }
-                p.titulos:nth-child(3) {
-                    top: 70vh;
-                    left: 75%;
-                    transform: translate(-30%, 0%) skewX(-10deg);
-                }
-                p.titulos span {
-                    background-image: linear-gradient(180deg, red, transparent);
-                    -webkit-background-clip: text;
-                    background-clip: text; 
-                    color: transparent;
-                    -webkit-text-fill-color: transparent;
-                }
-                .p:not(.titulos) {
-                    max-width: 100%;
-                    opacity: 0.1;
-                    text-shadow: 0px 0px 20px black;
-                    font-family: 'Wood Block One Regular', sans-serif;
-                    font-size: clamp(40px, 10vw, 500px);
-                    white-space: nowrap;
-                    color: black;
-                    user-select: none;
-                    margin-right: 20px;
-                    margin: 10px;
-                    transform: translateX(-100px);
-                    margin-top: 20px;
-                    animation: bolas 7s ease infinite alternate-reverse;
-                }
-                @keyframes bolas {
-                    to {opacity: 0.75; transform: translateX(-500px);}
-                }
-                .p:not(.titulos)::first-letter {
-                    font-size: clamp(60px, 11vw, 1100px);
-                }
-                ::selection{
-                    background-color: red;
-                    color: white;
-                }
-                .p::selection {
-                    background-color: transparent;
-                    color: red;
-                }
-                .logo, .logolol {
-                    user-select: none;
-                    -webkit-user-select: none;
-                    border-radius: 50%;
-                    transition: filter 0.3s ease, box-shadow 0.3s ease,transform 0.3s ease;
-                    z-index: 1;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: clamp(70px, 70vw, 500px);
-                    animation: passando 3.5s ease;
-                    will-change: transform;
-                    filter: brightness(0) drop-shadow(0px -3px 3px red);
-                }
-                .logolol:hover {
-                    transition: transform 0.7s allow-discrete, filter 0.7s allow-discrete;
-                    z-index: 99999999999999;
-                    filter: brightness(1.13);
-                    transform: translate(-50%, -50%) scale(1.15);
-                }
-                .logolol {
-                    animation: none;
-                    cursor: pointer;
-                }
-                p:not(.titulos)::first-letter {
-                    font-size: clamp(44px, 2.5vw, 45px);
-                    color: red;
-                    font-family: "Wood Block One Regular",  sans-serif;
-                }
-                p:not(.titulos) {
-                    text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black;
-                    font-family: "Teko", sans-serif;
-                    font-weight: 400;
-                    font-size: clamp(20px, 2.5vw, 30px);
-                    color: whitesmoke;
-                }
-                .text {
-                    align-self: center;
-                    justify-self: center;
-                    font-family: "Wood Block One Regular", sans-serif;
-                    color: white;
-                    font-size: clamp(40px, 4vw, 90px);
-                    cursor: pointer;
-                    animation: shine 0.5s ease infinite alternate;
-                    text-decoration: underline dotted rgba(255, 0, 0, 0.257);
-                    text-decoration-skip-ink: none;
-                }
-                .text::marker {
-                font-size: 0px;
-                }
-                details::details-content {
-                    transform: translateY(-25px);
-                    opacity: 0;
-                transition: transform 0.3s allow-discrete, opacity 0.3s allow-discrete, content-visibility 0.3s allow-discrete;
-                }
-                details[open]::details-content {
-                    transform: translateY(0px);
-                    opacity: 1;
-                }
-                h1 {
-                    display: grid;
-                    justify-self: center;
-                    align-self: center;
-                    margin-top: 175px;
-                    white-space: nowrap;
-                    font-family: "Wood Block One Regular", sans-serif;
-                    font-style: italic;
-                    font-weight: 400;
-                    font-size: clamp(30px, 5vw, 700px);
-                    color: red;
-                    animation: passandop ease;
-                    animation-timeline: view();
-                    animation-range: entry 10% cover 40%;
-                    margin-bottom: -1px;
-                }
-                h1 span {
-                    will-change: transform;
-                    font-style: normal;
-                    font-weight: 100;
-                    font-family: "Wood Block One Regular", sans-serif;
-                    display: inline-block;
-                    justify-self: center;
-                    align-self: center;
-                    animation: spin 1s linear infinite;
-                }
-                h1 span:nth-child(2) {
-                    animation: spin 1s linear infinite reverse;
-                }
-                section {
-                    transition: all 0.4s allow-discrete;
-                    box-shadow: 0px 0px 20px black, 0px 0px 1px black;
-                    corner-shape: scoop;
-                    margin-bottom: 20px;
-                    line-height: 2;
-                    align-self: center;
-                    justify-self: center;
-                    width: 80%;
-                    display: grid;
-                    position: relative;
-                    padding: 30px;
-                    background: linear-gradient(180deg, transparent,black, black, black), repeating-conic-gradient(black 0 25%, rgb(113, 0, 0) 0 50%) 0 0 / 90px 90px;
-                    border: 5px solid red;
-                    border-radius: 20px;
-                    animation: passandop ease;
-                    animation-timeline: view();
-                    animation-range: entry -40% cover 17%;
-                }
-                .section {
-                    background: linear-gradient(180deg, black, red);
-                    background-size: 100% 400%;
-                }
-                .section .ball {
-                    transition: all 0.3s ease;
-                    width: clamp(10px, 1vw, 20px);
-                    height: clamp(10px, 1vw, 20px);
-                    background-color: red;
-                    border-radius: 50%;
-                    border: 2px solid red;
-                }
-                .section:hover .ball {
-                    transform: scale(2);
-                    background-color: rgba(255, 0, 0, 0);
-                    border: 2px solid red;
-                }
-                .section:hover .text {
-                    transition: color 0.4s allow-discrete, text-decoration 0.4s allow-discrete;
-                    color: red;
-                    text-decoration: underline dotted red;
-                }
-                .section:hover {
-                    transform: translateY(-10px);
-                    box-shadow: 0px 10px 13px red;
-                }
-                .section:active {
-                    transform: translateY(1px);
-                    box-shadow: 0px 5px 13px red;
-                }
-                hr {
-                    height: 4px;
-                    width: 100%;
-                    background-color: red;
-                    border: none;
-                }
-                #outside {
-                    margin-top: 300px;
-                    height: 4px;
-                    width: 100%;
-                    background-color: red;
-                    border: none;
-                }
-                a, .a {
-                    text-align: center;
-                    transition: all 0.3s allow-discrete;
-                    font-size: clamp(30px, 2vw, 75px);
-                    white-space: wrap;
-                    max-width: 100%;
-                    width: 100%;
-                    height: 100%;
-                    font-family: "Wood Block One Regular", sans-serif;
-                    color: white;
-                    background-image: linear-gradient(180deg, black, red);
-                    background-size: 100% 400%;
-                    border: 2px solid red;
-                    corner-shape: scoop;
-                    border-radius: 5px;
-                    text-decoration: underline dotted rgba(255, 0, 0, 0.228);
-                }
-                a {
-                    place-self: center;
-                }
-                a:hover {
-                    transition: all 0.4s allow-discrete;
-                    transform: translateY(-10px);
-                    text-decoration: underline dotted red;
-                    color: red;
-                    box-shadow: 0px 5px 15px red;
-                }
-                a:active {
-                    transform: translateY(0.2px);
-                    box-shadow: 0px 2px 15px red;
-                }
-                .hold {
-                    display: inline-flex;
-                    flex-wrap: wrap;
-                    margin: 1%;
-                    width: 450px;
-                    height: 275px;
-                }
-                h2 {
-                    font-size: clamp(20px, 2vw, 40px);
-                    margin-top: 10px;
-                    margin-bottom: 5px;
-                    font-family: 'Wood Block One Regular', serif;
-                    color: red;
-                    justify-content: center;
-                    align-items: center;
-                    font-style: italic;
-                }
-                @keyframes passando {
-                    0% {
-                        filter: brightness(0) drop-shadow(0px -3px 3px red); opacity: 0; transform: translate(-50%, -50%) translateY(-1000px);
-                    }
-                    100% {
-                        filter:  brightness(0) drop-shadow(0px -3px 3px red); opacity: 1;
-                    }
-                }
-                @keyframes passandop {
-                    0% {
-                        opacity: 0 ;
-                    }
-                    75% {
-                        opacity: 0.4;
-                    }
-                    100% {
-                         opacity: 1;
-                    }
-                }
-                @keyframes spin {
-                    from {transform: rotate(360deg);}
-                    to {transform: rotate(0deg);}
-                }
-                @keyframes flip {
-                    from {transform: translate(-50%, -50%) scale(1.15)  rotateY(360deg);}
-                    to {transform: translate(-50%, -50%) scale(1.15)  rotateY(0deg);}   }
-            </style>
-        </head>
-        <body>
-            <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
-            <p class="titulos">Império Viltrum</p>
-            <p class="titulos">Ao<span> seu </span>dispor.</p>
-            <img onclick="logoflip()" id="nossalogo" class="logo" src="https://files.catbox.moe/eo801n.png">
-            
-            </div>
-            <section style="margin-top: 100px;"><h1 style="margin-top: 0px; margin-bottom: 20px;">Pular</h1>
-            <a href="#quemsomosnos">Quem somos nos</a>
+    <style>
+        * {transition: all 0.3s ease;}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+        summary, details {
+            color: white;
+            background: black;
+            padding: 10px 10px;
+            border: white 2px solid;
+            margin: 5px;
+        }
+        summary {
+            cursor: pointer;
+        }
+        details {
+            cursor: cell;
+        }
+        .wrapper{
+            border: 1px solid white;
+            display: inline-flex;
+            position: relative;
+            padding: 30px;
+            max-width: 90%;
+            width: 90%;
+            background-color: black;
+            color: white;
+            place-items: center;
+            justify-content: center;
+        }
+        .example {
+            background-color: transparent;
+            border: 1px solid white;
+            height: 10px;
+            width:10px;
+            border-radius: 10px;
+            font-size: 10px;
+            text-align: center;
+        }
+        button:hover {
+            transform: scale(1.15);
+        }
+        .clicked {
+            background-color: black;
+            color: white;
+            border: white 2px solid;
+            outline: 2px solid black;
+            transform: scale(1.3);
+        }
+        button:active {
+            transition: all 0.1s ease;
+            transform: scale(1.4);
+        }
+        button {
+            padding: 3px 20px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            color: black;
+            border-radius: 100px;
+        }
+        img {
+            -webkit-box-align: center;
+            transition: 0.3s all ease;
+            place-self: center;
+            justify-self: center;
+            display: grid;
+            position: relative;
+            border: 2px solid #00000080;
+        }
+        img:active {
+            transition: all 0.1s ease;
+            transform: scale(1.5);
+        }
+        .dark {
+            color: white;
+            background: black;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 3px solid black;
+            outline: 3px solid white;
+        }
+        #mar1, #mar2, #mar3 {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="wrapper">
+        <code>
+            NOVIDADES:
             <br>
-            <a href="#nossaultimapart">Nossa ultima participação</a></section>
-            <hr id="outside">
-            <h1 id="quemsomosnos"> <span>+</span> QUEM SOMOS NOS? <span>+</span></h1>
-            <section>
-            <p style="max-width: 90%; align-self: center; justify-self: center;">&nbsp;&nbsp;Um grupo de estudantes, preparados para o desafio.
-                <br>
-                Conheça o grupo por trás da equipe&nbsp; <span style="font-family: 'Wood Block One Regular', serif; color:red;">OMNIS</span>; &nbsp;Membro por membro.</p>
-                <h2 style="display: grid;">(clique nos nomes para abrir cada descrição)</h2>
-            <section class="section">
-                <div class="ball"></div>
-                <details>
-                    <summary class="text">JOÃO LUCAS DO NASCIMENTO SILVA</summary>
-                    <hr>
-                    <p>
-                        &nbsp;&nbsp;Aluno criativo e disposto a participar de atividades Extracurriculares. <span style="color: red;">Intercâmbista</span> do SESI no Mundo, demonstrando independência e precisão em tomadas de decisões. Desenvolvedor deste site.
-                    </p> 
-                    <hr>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Idade:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;16</span></h2>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Classe:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;2 °A</span></h2>
-                    </details>
-                </section>
-                <section class="section">
-                <div class="ball"></div>
-                <details>
-                    <summary class="text">PEDRO PAULO MORAIS DE CARVALHO</summary>
-                    <hr>
-                    <p>
-                        &nbsp;&nbsp;Ex-membro da <span style="color: red;">robótica</span> OBR do SESI, um aluno preparado para explorar e trabalhar com resolução de problemas tecnologicos. Focado em colaborar em união e apresentando determinação e perseverança em projetos.
-                    </p>
-                    <hr>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Idade:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;16</span></h2>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Classe:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;2 °A</span></h2>
-                    </details>
-                </section>
-                <section class="section">
-                <div class="ball"></div>
-                <details>
-                    <summary class="text">GEOVANE SANTOS DA SILVA FILHO</summary>
-                    <hr>
-                    <p>
-                        &nbsp;&nbsp;Estudante bolsista do SESI, pronto para resolução de problemas e trabalho em equipe. Grande aptidão para desenvolver projetos, carregando boas ideias para conceitualização e avanço de projetos - focando em colocar as ideias fora do papel e tornarem elas em <span style="color: red">realidade</span>. 
-                    </p>
-                    <hr>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Idade:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;17</span></h2>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Classe:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;2 °A</span></h2>
-                    </details>
-                </section>
-                <section class="section">
-                <div class="ball"></div>
-                <details>
-                    <summary class="text">JOÃO EDUARDO DE OLIVEIRA SANTOS</summary>
-                    <hr>
-                    <p>
-                        &nbsp;&nbsp;Aluno focado nos estudos e na inovação, tomando iniciativas e guiando seu time como <span style="color: red;">lider</span>. Exemplo de disciplina e consistência para o grupo. Medalhista da OBA e Canguru, demonstrando sua aptidão em tomar decisões baseadas em fatos.
-                    </p>
-                    <hr>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Idade:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;16</span></h2>
-                    <h2 style="justify-self: left; font-size: clamp(40px, 3vw, 46px);">Classe:<span style="color: white; font-size: clamp(30px, 2.5vw, 35px);">&nbsp;2 °A</span></h2>
-                    </details>
-                </section>
-            </section>
-            <hr id="outside">
-            <h1 id="nossaultimapart"><span>+</span>NOSSA ULTIMA PARTICIPAÇÃO<span>+</span></h1>
-            <section><p style="max-width: 90%; align-self: center; justify-self: center;">&nbsp;&nbsp;Em <span style="color: red;">22/04/2026</span>, o grupo OMNIS participou do Grand Prix, oferencendo uma resolução para a Petrobras, de um problema relacionado a <span style="color: red;">adaptação de Óculos de Realidade Virtual</span> no ambiente de trabalho, devido a possíveis vazamentos de dados. Abaixo está o video de nossa participação no Grand Prix.</p>
-                        <div class="a">
-                            <p style="text-decoration: underline red;">Pitch de vendas & Protótipo</p>
-                        <iframe class="hold" src="https://www.youtube.com/embed/QzGDPpS8dMc?si=9acdJ3EUB6s4Wgag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe class="hold" src="https://www.youtube.com/embed/JqrJ1JtadJs?si=3sH4JZnb3mA7m76R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>          
-            
-                    </section>
-            </section>
-            
+            - Assuntos novos em história;
             <br>
+            - Algumas mudanças de estética (poucas);
             <br>
-            <br>
-            <br>
-        <div class="big"><p class="p">●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●</p>
-        <script>
-            setTimeout(() => {
-            document.getElementById("nossalogo").className = "logolol";
-            }, 3500);
-        
-            function logoflip() {
-                document.getElementById("nossalogo").style.animation = "flip 0.7s ease";
-                setTimeout(() => {
-                    document.getElementById("nossalogo").style.animation = "none";
-                }, 701);
+            - Assuntos novos de fisica.
+        </code></div>
+    <button id="fbutton" onclick="fisic()" class="clicked">fisica</button>
+    <button id="pbutton" onclick="portu()">portugues</button>
+    <button id="hbutton" onclick="histo()">historia</button></div>
+    <button id="escuro" onclick="escurinho()">modo escuro</button>
+    <button id="claro" style="display: none;" onclick="clarinho()">modo claro</button>
+    <button id="lagbutton" onclick="lag()">aperta aqui se tiver lagando</button>
+    <div id="fisica">
+        <h1>ELETRICIDADE E SISTEMA NERVOSO</h1>
+        <hr>
+        <h2>1- Eletricidade</h2>
+        <p>Ferramentas da natureza associadas a carga eletrica de um movimento.
+               <h3>Carga elétrica</h3>
+                <p>Quantidade de energia presente em um material.</p>
+                <code class="wrapper">Q = n * e</code>
+                <p>Unidade (Coulomb) = 'C'
+                    <br>
+                    n = número de cargas de um material.
+                    <br>
+                    e = Carga elementar de um material.
+
+                    <br><br>
+                    OBS: <span style="text-decoration: underline;" >e = 16*10 <ruby><rt>-10</rt></ruby>C</span>
+                </p>
+                <h3>Subunidades de Cargas</h3>
+                <p>10<ruby><rt>-3</rt></ruby>mC = MiliCoulomb<br>
+                10<ruby><rt>-6</rt>MC = MicroCoulomb</ruby><br>
+                10<ruby><rt>-9</rt>nC = NanoCoulomb</ruby><br>
+                10<ruby><rt>-12</rt></ruby>pC = PicoCoulomb
+<br><br>
+Exemplo:</p>
+<div id="mar1">
+<marquee
+  direction="down"
+  width="100%"
+  height="100px"
+  behavior="alternate"
+  style="background-color: black; color: white;">
+  <marquee behavior="alternate">&ominus;</marquee>
+  <marquee behavior="scroll">&ominus;</marquee>
+  <marquee behavior="alternate" direction="right">&ominus;</marquee>
+</marquee></div>
+
+<p>um monte de negativo indo pra lado aleatorio (a animação pode quebrar)</p>
+
+
+  <h2>Diferença de Potencial</h2>
+  <p>Variação da quantidade de energia entre dois pontos. (U<small style="font-size: 10px;">AB</small>)</p>
+   <p>Exemplo:</p>
+   <div id="mar2">
+   <marquee
+  direction="down"
+  width="100%"
+  height="100px"
+  behavior="alternate"
+  style="background-color: black; color: white;">
+  <marquee behavior="alternate">&ominus;</marquee>
+  <marquee behavior="scroll">&ominus;</marquee>
+  <marquee behavior="alternate" direction="right">&ominus;</marquee>
+</marquee></div>
+   <p>um monte de negativo, de novo, indo pra lugar aleatorio (a animação pode quebrar)</p>
+    <br>
+    <br>
+     &darr;
+     <br>
+     <br>
+     <div style="background-color: black;" id="mar3">
+     <marquee
+  direction="right"
+  width="100%"
+  height="33px"
+  behavior="scroll"
+  style="background-color: black; color: white;">&ominus;</marquee>
+  <marquee
+  direction="right"
+  width="100%"
+  height="33px"
+  behavior="scroll"
+  style="background-color: black; color: white;">&ominus;</marquee>
+  <marquee
+  direction="right"
+  width="100%"
+  height="33px"
+  behavior="scroll"
+  style="background-color: black; color: white;">&ominus;</marquee>
+  </div>
+       <p>um monte de negativo indo pra direita em harmonia (a animação pode quebrar)</p>
+     <p>U<small style="font-size: 10px;">A</small> > U<small style="font-size: 10px;">B</small></p>
+     <br>
+     <p>A energia irá fluir da região de maior potencial para o de menor potencial.</p>
+    <h3>Sentido da Corrente</h3>
+     <h4>*Real</h4>
+     <p>U<small style="font-size: 10px;">B</small> ~> U<small style="font-size: 10px;">A</small></p>
+
+     <figure>
+     <div class="wrapper"><p>&ominus;</p><small style="font-size: 10px;">B</small>&rarr;<p>&oplus;</p><small style="font-size: 10px;">A</small></div>
+     <figcaption>uma corrente, onde a energia da corrente passa de B para A, sendo A positivo e B negativo.</figcaption>
+     </figure>
+
+     <h4>*Convencional</h4>
+     <p>U<small style="font-size: 10px;">A</small> ~> U<small style="font-size: 10px;">B</small></p>
+
+     <figure>
+     <div class="wrapper"><p>&ominus;</p><small style="font-size: 10px;">B</small>&larr;<p>&oplus;</p><small style="font-size: 10px;">A</small></div>
+     <figcaption>uma corrente, onde a energia da corrente passa de A para B, sendo A positivo e B negativo.</figcaption>
+     </figure>
+<br><br><br><br>
+<hr><hr>
+<h1>ÓTICA</h1>
+<h3>1- Raio de Luz</h3>
+<p>"Reta orientada que representa, geometricamente, a propagação da luz"</p>
+<p>Feixe de luz "Um conjunto de raios de luz."</p>
+
+<h4>Espelhos Esféricos {asaunto de 4 de novembro}</h4>
+<div class="wrapper">
+<div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Concavo</h4>
+<p>Reflexão interna da curvatura</p>
+</div>
+<div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Convexo</h4>
+<p>Reflexão Externa da curvatura</p>
+</div></div>
+
+<img width="200px" height="200px" src="https://file.garden/aq_0Fg8cibtOL7XF/opica.png">
+<h4>Vertice</h4>
+<p>Caracterizado pela letra V; Ponto em que o espelho toca o eixo principal.</p>
+<br>
+<h4>Foco</h4>
+<p>Caracterizado pela letra F; Ponto médio, entre o centro da curvatura e o Vertice.</p>
+<code class="wrapper">F = R/2</code>
+<br>
+<h4>Centro de Curvatura</h4>
+<p>Caracterizado pela letra C; Centro da Circunferência da esfera espelhada.</p>
+<br>
+<h3>Tipos de imagens geradas</h3>
+<h4>Real ou Virtual</h4>
+<p><strong>Real</strong> - Formado pelo Feixe de luz</p>
+<hr>
+<p><strong>Virtual</strong> - Prolongamento do Feixe de luz</p>
+<h4>Podem ser maior ou menor</h4>
+<h4>Direita ou Invertida</h4>
+<p><strong>Direita</strong> - Acima do eixo principal</p>
+<hr>
+<p><strong>Invertida</strong> - Abaixo do eixo principal</p>
+
+<img width="300px" height="200px" src="https://file.garden/aq_0Fg8cibtOL7XF/C.png">
+
+<hr><hr>
+<h3>2- Feixe</h3>
+<img width="200px" height="200px" src="https://file.garden/aq_0Fg8cibtOL7XF/1116.webp">
+<h3>Meios Fisicos</h3>
+<div class="wrapper" style="display: grid;">
+    <div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Transparente</h4>
+<p>Propagação regular da luz</p>
+</div>
+<div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Translucido</h4>
+<p>Propagação desordenada da luz</p>
+</div>
+<div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Opaco</h4>
+<p>Não apresenta propagação em seu interior</p>
+</div>
+</div>
+
+<h3>3- Propagação Retilinia da luz</h3>
+<div class="wrapper" style="display: grid;">
+    <div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Sombra ou Umbra</h4>
+<p>Região não iluminada (OBS: total)</p>
+</div>
+<div style="border: 10px solid black; outline: white 1px solid;">
+<h4>Pernumbra</h4>
+<p>Região parcialmente iluminada</p>
+</div>
+</div>
+
+
+<h3>Eclipses</h3>
+<img width="200px" height="200px" src="https://file.garden/aq_0Fg8cibtOL7XF/Copy%20of%20fonte%20de%20luz.png">
+
+<h2>3- Câmara Escura</h2>
+<p>Formação de imagem no interior dos objetos que apresenta entradas de luz</p>
+<img width="200px" height="200px" src="https://file.garden/aq_0Fg8cibtOL7XF/fonte%20de%20luz.png">
+<p>Calculo</p>
+<code class="wrapper">I/O = DI/DO</code>
+<p>Exemplo:</p>
+<code class="wrapper">O = 3,5m
+    <br>
+    DI = 40cm
+    <br>
+    I = 3,5cm
+    <br>
+    DO = ?
+    <br><br>
+    3,5cm / 3,5m = 40cm / DO
+    <br>
+    3,5cm / 350cm = 40cm / DO
+    <br>
+    0.01cm = 40cm / DO 
+    <br>
+    DO = 0.01cm . 40cm
+    <br><br>
+    DO = 0.04cm
+</code>
+<br><br><br><br><hr><hr>
+<h1>ASSUNTOS ADICIONAIS</h1>
+<h2>espécie de anotação, feita pois o professor não passou os seguintes assuntos.</h2>
+<h3>fontes de luz</h3>
+<p>A luz tem dois tipos de fontes - a <strong>primária</strong> e <strong>secundária</strong>. As fontes primárias tem sua própria luz, como o Sol. As secundárias apenas refletem a luz recebida de uma luz primária.</p>
+<hr>
+<h3>Propriedades da luz</h3>
+<p><strong>REFLEXÃO</strong>: Uma luz que cai sobre uma superfície pode ser refletida. A lei de reflexão afirma que o ângulo da luz caida sobre ela é igual ao ângulo de reflexão.</p>
+<p><strong>REFRAÇÃO</strong>: A luz pode mudar de direção ao passar de um canto pra outro, e isso se chama de refração.</p>
+<p><strong>DIFRAÇÃO</strong>: A luz pode se curvar ao redor de obstáculos ou passar por fendas, produzindo padrões de interfêrencia.</p>
+<p><strong>DISPERSÃO</strong>: A luz branca pode ser separadaa em cores ao passar por um prisma (lembra daquela imagem?) devido a variação do índice de refração com a frequência ou comprimento de onda da luz. </p>
+<hr><h3>PRA CALCULAR A SOMBRA</h3>
+<p>Método trigonométrico (quando se sabe a altura do objeto e o angulo em que a luz cai em relação ao solo)</p>
+<div class="wrapper"><code>Comprimento da Sombra = h/tan(ângulo da fonte de luz em relação ao solo)</code></div>
+<p>Semelhança de triângulos (quando se sabe a distancia entre a fonte de luz e o objeto e a distancia ate o chao ou parede, ou seja, anteparo)</p>
+<div class="wrapper"><code>H/h = D/d
+<br><br>H = Altura ou raio da sombra projetada<br>h = Altura ou raio do objeto opaco<br>D = Distância da fonte de luz até o anteparo<br>d = Distância da fonte de luz ate o objeto</code></div>
+<img src="https://file.garden/aq_0Fg8cibtOL7XF/Copy%20of%20fonte%20de%20luz%20(1920%20x%201080%20px).png" width="380px" height="260px">
+<hr><hr>
+
+
+
+
+<div id="anotafisic">
+<p>anotações fisica</p>
+<textarea id="notasfisic"></textarea>
+<button id="salvafisica" onclick="save()">salvar</button></div>
+
+
+
+    </div>
+    <div id="portugues" style="display: none;">
+      <h1>CLARICE LINSPECTOR - Características de sua literatura</h1>
+      <hr>
+      <h3>1-Interioridade</h3>
+      <p>Grande importância aos sentimentos, aos pensamentos, às angústias, às dúvidas etc, muitas vezes o que acontece dentro dos personagens se sobressai a ação externa.</p>
+      <h3>2- Cotidiano como ponto de partida</h3>
+      <p>Profundas reflexões do simples.</p>
+      <h3>3- Temas frequentes</h3>
+      <ul>
+        <li>Identidade</li>
+        <li>Solidão</li>
+        <li>Existência</li>
+        <li>Liberdade</li>
+        <li>Condição humana</li>
+        <li>Medo</li>
+        <li>Angústias</li>
+        <li>Sentido da vida</li>
+      </ul>
+      <br><br><br><br>
+      <div id="anotaportu">
+      <p>anotações português</p>
+<textarea id="notasportu"></textarea>
+<button id="salvaportu" onclick="savep()">salvar</button></div>
+</div>
+
+
+<div id="historia" style="display: none;">
+ <h1>A UNIÃO SOVIÉTICA NA GUERRA FRIA - BUROCRACIA E IDEOLOGIA</h1>
+ <hr>
+ <h3>1- Nomenclatura</h3>
+ <p>Durante a Guerra Fria, um grupo de funcionários de alta classe (uma contradição) comunista gozava de direitos e privilégios.</p>
+ <h3>2-  O Heroismo <small>- Conectado à contradição</small></h3>
+ <p>Prega uma sociedade sem classes.</p>
+ <h4>Trostsky</h4>
+ <p>Criou o controle burocrático do estado Soviético. "Transformando numa casta."</p>
+ <h4>Reformas:</h4>
+ <ul>
+    <li>Glasnot: Transparência;</li>
+    <li>Perestroika: Re-estruturação econômica.</li>
+ </ul>
+ <h3>3- KGB <small>(espionagem externa, expressão interna)</small></h3>
+ <p>Gerava falsos relatórios e notícias manipulados para gerar a sensação de um estado rico.</p>
+<br>
+<hr><hr><br>
+<h2>MOVIMENTOS PELOS DIREITOS CIVIS NOS ESTADOS UNIDOS</h2>
+<details><summary>Rosa Sparks</summary>
+<h5>1955, Alabama</h5>
+<ul>
+    <li>Boicote = Paralisação do transporte público local(gerando caos).
+    </li>
+    <li>Marchas pacíficas, manifestações etc.</li>
+</ul></details>
+<details><summary>Martin Luther King Jr.</summary>
+<h5>1963</h5>
+<ul>
+    <li>Marchas sobre Washington
+    </li>
+    <li>Resistência pacífica baseada em <abbr title="Pai da nação indiana" style="cursor:progress;">Gandhi</abbr> ||| Lei dos Direitos Civis = Pediu a Segregação.</li>
+</ul></details>
+<details><summary>Malcon X.</summary>
+<h5>1964, Radical</h5>
+<ul>
+    <li>Nacionalismo negro (Mulçumano);
+    </li>
+    <li>Auto defesa;</li>
+</ul>
+<li>Panteras negras.</li>
+<iframe class="hold" src="https://www.youtube.com/embed/3QSThxFOzOA?si=pJb5nJSgVYY3LHfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p> &nbsp; &nbsp; &uparrow; Video de falas do Malcom X.</p></details>
+<h4>Razões Motoras: Segregação Institucionalizada</h4>
+<ul>
+    <li><strong>Pós Guerra Civil (1865) = </strong>13° Emenda aboliu a escravidão, mas o racismo impediu a igualdade na prática.</li>
+    <hr style="background: red; border-color: red;">
+    <h5 style="color: red;"><strong>KKK (1865)</strong></h5>
+    <li style="color: red;"><strong>Deep South = </strong> Alabama | Georgia | Missisipi: Mantiveram a Segregação até 1960.</li>
+    <li style="color: red;"><strong>Leis Jim Crow = </strong> Sistemas de Custos</li>
+    <hr style="background: red; border-color: red;">
+</ul>
+<div id="anotahisto">
+<p>anotações historia</p>
+<textarea id="notashisto"></textarea>
+<button id="salvahisto" onclick="saveh()">salvar</button></div>
+</div>
+
+
+    <script>
+    disappear();
+    appear();
+    
+        document.body.className = localStorage.getItem("modo");
+        if (document.body.className == "dark") {
+            document.getElementById("escuro").style.display = 'none';
+            document.getElementById("claro").style.display = 'block';
+        } else {
+            document.getElementById("escuro").style.display = 'block';
+            document.getElementById("claro").style.display = 'none';
+        }
+
+        const salvafisica = document.getElementById("salvafisica");
+        const salvaportu = document.getElementById("salvaportu");
+        const salvahisto = document.getElementById("salvahisto");
+
+        let notasp = localStorage.getItem("notasp") || '';
+        let notash = localStorage.getItem("notash") || '';
+        let notasc = localStorage.getItem("notasc") || '';
+
+        const notasfisic = document.getElementById("notasfisic");
+        const notasportu = document.getElementById("notasportu");
+        const notashisto = document.getElementById("notashisto");
+
+        const anotafisic = document.getElementById("anotafisic");
+        const anotaportu = document.getElementById("anotaportu");
+        const anotahisto = document.getElementById("anotahisto");
+
+        const fbutton = document.getElementById("fbutton");
+        const pbutton = document.getElementById("pbutton");
+        const hbutton = document.getElementById("hbutton");
+        const historia = document.getElementById("historia");
+        const portugues = document.getElementById("portugues");
+        const fisica = document.getElementById("fisica");
+        const lagbutton = document.getElementById("lagbutton")
+
+        function escurinho() {
+            localStorage.setItem("modo", 'dark');
+            document.getElementById("escuro").style.display = "none";
+            document.getElementById("claro").style.display = "block";
+            document.body.className = localStorage.getItem("modo");
+        }
+        function clarinho() {
+            localStorage.setItem("modo", '');
+            document.getElementById("escuro").style.display = "block";
+            document.getElementById("claro").style.display = "none";
+            document.body.className = localStorage.getItem("modo");
+        }
+        function portu() {
+            disappear();
+            appear();
+            fbutton.className = '';
+            pbutton.className = 'clicked';
+            hbutton.className = '';
+            portugues.style.display = 'block';
+            fisica.style.display = 'none';
+            historia.style.display = 'none';
+            anotaportu.style.display = 'block';
+            anotahisto.style.display = 'none';
+            anotafisic.style.display = 'none';
+        }
+        function fisic() {
+            disappear();
+            appear();
+            fbutton.className = 'clicked';
+            pbutton.className = '';
+            hbutton.className = '';
+            portugues.style.display = 'none';
+            fisica.style.display = 'block';
+            historia.style.display = 'none';
+            anotaportu.style.display = 'none';
+            anotahisto.style.display = 'none';
+            anotafisic.style.display = 'block';
+        }
+        function histo() {
+            disappear();
+            appear();
+            fbutton.className = '';
+            pbutton.className = '';
+            hbutton.className = 'clicked';
+            portugues.style.display = 'none';
+            fisica.style.display = 'none';
+            historia.style.display = 'block';
+            anotaportu.style.display = 'none';
+            anotahisto.style.display = 'block';
+            anotafisic.style.display = 'none';
+        }
+        function lag() {
+            lagbutton.innerHTML = "ja foi pressionado";
+            document.getElementById("mar1").remove();
+            document.getElementById("mar2").remove();
+            document.getElementById("mar3").remove();
+        }
+            function save() {
+            notasc = notasfisic.value;
+            salvafisica.innerHTML = "salvo!"
+            salvafisica.className = 'clicked';
+            setTimeout(() => {salvafisica.innerHTML = "salvar"
+            salvafisica.className = '';}, 2000);
+            localStorage.setItem("notasc", notasc);  
             }
-        </script>
-            </body>
-        </html>
+            function retrieve() {
+             notasfisic.value = notasc;
+             notasportu.value = notasp;
+             notashisto.value = notash;
+            }
+            function savep() {
+                notasp = notasportu.value;
+                salvaportu.innerHTML = "salvo!"
+                salvaportu.className = 'clicked';
+            setTimeout(() => {salvaportu.innerHTML = "salvar"
+                salvaportu.className = '';
+            }, 2000);
+                localStorage.setItem("notasp", notasp);
+            }
+            function saveh() {
+                notash = notashisto.value;
+                salvahisto.innerHTML = "salvo!"
+                salvahisto.className = 'clicked';
+            setTimeout(() => {salvahisto.innerHTML = "salvar"
+                salvahisto.className = '';
+            }, 2000);
+                localStorage.setItem("notash", notash);
+            }
+            retrieve();
+            
+            function appear() {
+                setTimeout(() => {
+                 document.body.style.opacity = "1";
+            }, 300);}
+            function disappear() {
+                document.body.style.opacity = "0";
+            }
+    </script>
+    </body>
+</html>
